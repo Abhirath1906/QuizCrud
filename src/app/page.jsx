@@ -37,7 +37,7 @@ export default function Home() {
       const res = await fetch("/api/students", { cache: "no-store" });
       const data = await res.json();
 
-      console.log("🔥 DATA API ASLI:", data);
+      
 
       const allStudents = data?.body?.data || [];
       setStudents(allStudents);
@@ -85,7 +85,6 @@ export default function Home() {
       form.resetFields();
       fetchStudents();
     } catch (error) {
-      console.error("Add error:", error);
       message.error("Gagal menambah siswa");
     }
   };
@@ -108,7 +107,6 @@ export default function Home() {
       form.resetFields();
       fetchStudents();
     } catch (error) {
-      console.error("Edit error:", error);
       message.error("Gagal mengubah siswa");
     }
   };
